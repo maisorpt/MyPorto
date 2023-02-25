@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <title>Judul Dokumen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+        /* Semua elemen span */
+        span {
+            color: red;
+        }
+
+        /* class selector */
+        .red {
+            color: red;
+        }
+
+        .skyblue-bg {
+            background-color: skyblue;
+        }
+
+        .fancy {
+            font-weight: bold;
+            text-shadow: 4px 4px 3px #77f;
+        }
+
+        /* elemen dan class combinatiom */
+        p.fancy {
+            text-shadow: 4px 4px 3px #00c8eb;
+        }
+
+        /* class selector */
+
+        /* id selector */
+        #special {
+            background-color: skyblue;
+        }
+
+        /* end id selector */
+
+        /* attribute selector */
+        /* <a> element yang menerapkan href attribut */
+        a[href] {
+            color: blue;
+        }
+
+        /* <a> element yang menerapkan nilai pada href dengan awalan "#" */
+        a[href^="#"] {
+            background-color: gold;
+        }
+
+        /* <a> element yang menerapkan nilai pada href yang mengandung teks "example" */
+        a[href*="example"] {
+            background-color: silver;
+        }
+
+        /* <a> element yang menerapkan nilai pada href yang mengandung teks "insensitive" tidak mementingkan huruf kapital*/
+        a[href*="insensitive" i] {
+            color: cyan;
+        }
+
+        /* <a> element yang menerapkan nilai pada href dengan akhiran ".org" */
+        a[href$=".org"] {
+            color: red;
+        }
+
+        /* end attribute selector */
+        /* universal selector */
+        /* Menargetkan seluruh tipe elemen */
+        /* * {
+      color: green;
+    } */
+
+        /* Menargetkan seluruh tipe elemen yang mengandung nilai "en" pada atribut lang */
+        *[lang^=en] {
+            font-style: italic;
+        }
+
+        /* Menargetkan seluruh tipe elemen yang memiliki nilai "warning" pada atribut class */
+        *.warning {
+            color: red;
+        }
+
+        /* Menargetkan seluruh tipe elemen yang memiliki nilai "content" pada atribut id */
+        *#content {
+            border: 1px solid blue;
+            padding: 20px;
+        }
+
+        /* end universal selector */
+        /* adjacent sibling selector
+    menggabungkan dua buah basi selector */
+        /* Rule akan diterapkan pada elemen paragraf yang berada tepat setelah elemen img */
+        img+p {
+            color: green;
+        }
+
+        /* end adjacent selector */
+        /* general sibling selector */
+        img~p {
+            color: green;
+        }
+
+        /* end general sibling selector */
+        /* child selector */
+        /* Rule akan diterapkan pada elemen paragraf yang merupakan child dari elemen div */
+        div>p {
+            background-color: yellow;
+        }
+
+        /* end child selector */
+        /* <!-- desecendant selector (space) -->
+              /* Rule akan diterapkan pada elemen paragraf yang merupakan turunan dari elemen div */
+        div p {
+            background-color: yellow;
+        }
+
+        /* end descendant selector space  */
+
+        /* pseudo selector */
+        /* rule akan diterapkan pada sebuah tautan yang belum pernah dikunjungi */
+        a:link {
+            color: red;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+        a:visited {
+            color: green;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+        a:hover {
+            color: pink;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika ditekan */
+        a:active {
+            color: orange
+        }
+
+        blockquote::before,
+        blockquote::after {
+            content: '"';
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+        }
+      /* Rule styling akan diterapkan pada karakter pertama disebuah paragraf */
+      p::first-letter {
+           font-size: 32px;
+           font-weight: bold;
+           color: saddlebrown;
+       }
+        /* end pseudo s elector */
+        /* font */
+        p {
+            text-indent: 5%;
+   font: 1em sans-serif;
+   line-height: 2;
+}
+p#first {
+    text-align: left;
+    text-transform: none;
+    text-shadow: 1px 1px 0px #000000;
+   background-color: #eeeeee;
+   color: #666666;
+}
+ 
+p#second {
+    text-align: right;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 3px #666666;
+   background-color: #dddddd;
+   color: #666666;
+}
+ 
+p#third {
+    text-align: center;
+    text-transform: lowercase;
+    word-spacing: 1.5em;
+    text-shadow: 2px 2px 7px #111111;
+   background-color: #cccccc;
+   color: #ffffff;
+}
+ 
+p#fourth {
+    text-align: justify;
+    Text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: -1px -1px #666666;
+   background-color: #cccccc;
+   color: #bbbbbb;
+}
+body {
+   font-family: 'Quicksand', sans-serif;
+}
+/* end font */
+/* color */
+.profile header {
+   text-align: center;
+}
+/* color end  */
+/* box */
+    /* box end */
+    /* limiting dimension */
+    .content {
+      max-width: 800px;
+      height: 400px;
+      margin: 0 auto;
+      background-color: deeppink;
+    }
+    /* limiting dimension end */
+    /* Overflowing Content */
+    div #test {
+      height: 200px;
+      width: 200px;
+      background-color: lightgreen;
+    }
+    /* Overflowing Content end */
+    /* box sizing */
+    div #hoho {
+      height: 200px;
+      width: 200px;
+      background-color: lightgreen;
+      border: 10px solid cornflowerblue;
+      padding: 20px;
+    }
+ 
+    #content {
+      box-sizing: content-box;
+
+    }
+ 
+    .box {
+      box-sizing: border-box;
+      border-top-width: 2px;
+   border-right-width: 1px;
+   border-bottom-width: 1px;
+   border-left-width: 2px;
+   height: 300px;
+      width: 300px;
+      background-color: #11C5C6;
+
+   border-width: 4px;
+   border-top-color: #919191;
+border-right-color: #111111;
+border-bottom-color: #4ee717;
+border-left-color: #00c8eb;
+box-shadow: 6px 6px 5px 10px #666666;
+border-radius: 10px;
+border-top-right-radius: 5px;
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 5px;
+   border-top-left-radius: 10px;
+
+    }
+    .center {
+           margin: 0 auto;
+       }
+    /* box  sizing end  */
+    /* posisitioning */
+    .boxes {
+   width: 200px;
+   height: 200px;
+}
+ 
+.first {
+   background-color: #60d0a8;
+}
+ 
+.second {
+   background-color: #6495ed;
+   position: relative;
+   top: 30px;
+   left: 10px;
+}
+ 
+.third {
+   background-color: #ffa500;
+}
+/* posisitioning end */
+/*  flow */
+/* normal */
+h1.normal-f {
+      background-color: #aaaaaa;
+      padding: 30px;
+    }
+    p.normal-f {
+      width: 450px;
+    }
+    /* relative */
+    .relative {
+           position: relative;
+           top: 10px;
+           left: 100px;
+       }
+          .absolute {
+        position: absolute;
+        top: 0;
+        left: 500px;
+      }
+      .parent {
+        width: 500px;
+        margin: 0 auto;
+        border: 4px solid black;
+        padding: 20px;
+      }
+      .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    /* flow end */
+    /* floating */
+    .containerr {
+        width: 800px;
+        border: 4px solid black;
+        padding: 10px;
+      }
+      img {
+        float: left;
+        margin: 10px;
+      }
+      /* float untuk text wrap */
+      * {
+        /* digunakan untuk menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
+        margin: 0;
+        padding: 0;
+        /* Menggunakan border-box dalam perhitungan dimensi box-nya */
+        box-sizing: border-box;
+      }
+      .containerrr {
+        width: 800px;
+        height: 400px;
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+      .left-content {
+        text-align: center;
+        line-height: 400px;
+        width: 30%;
+        height: 100%;
+        background-color: #00c7ed;
+        /* digunakan untuk memindahkan posisi elemen ke sisi kiri container */
+        float: left;
+      }
+      .right-content {
+        text-align: center;
+        line-height: 400px;
+        width: 70%;
+        height: 100%;
+        background-color: #60d0a8;
+        /* digunakan untuk memindahkan posisi elemen ke sisi kanan container */
+        float: right;
+      }
+      /* 3 kotak */
+      * {
+        /* digunakan untuk menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
+        margin: 0;
+        padding: 0;
+        /* Menggunakan border-box dalam perhitungan dimensi box-nya */
+        box-sizing: border-box;
+      }
+      .containerrrr {
+        width: 800px;
+        height: 400px;
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+      .left-contentt {
+        text-align: center;
+        line-height: 400px;
+        width: 33.3%;
+        height: 100%;
+        background-color: #00c7ed;
+        float: left;
+      }
+      .center-contentt {
+        text-align: center;
+        line-height: 400px;
+        width: 33.3%;
+        height: 100%;
+        background-color: #d0b541;
+        float: left;
+      }
+      .right-contentt {
+        text-align: center;
+        line-height: 400px;
+        width: 33.3%;
+        height: 100%;
+        background-color: #60d0a8;
+        float: left;
+      }
+      /* float problem */
+      .kontener {
+           width: 800px;
+           border: 4px solid black;
+           /* fixing code */
+           overflow: auto;
+       }
+ 
+       img {
+           float: left;
+           margin: 10px;
+       }
+      /* floating */
+    </style>
+</head>
+
+<body>
+    <!-- html -->
+    <figure>
+        <pre>
+                SAJAK PUTIH
+      
+            Bersandar pada tari warna pelangi
+            Kau depanku bertudung sutra senja
+            Di hitam matamu kembang mawar dan melati
+            Harum rambutmu mengalun bergelut senda
+      
+            Sepi menyanyi, malam dalam mendoa tiba
+            Meriak muka air kolam jiwa
+            Dan dalam dadaku memerdu lagu
+            Menarik menari seluruh aku
+      
+            Hidup dari hidupku, pintu terbuka
+            Selama matamu bagiku menengadah
+            Selama kau darah mengalir dari luka
+            Antara kita Mati datang tidak membelah...
+        </pre>
+        <figcaption>Sajak Putih oleh Charil Anwar</figcaption>
+     </figure>
+     <!-- html end -->
+
+    <!-- type selector -->
+    <span>Ini merupakan sebuah teks yang berada pada elemen span. Seharusnya elemen ini ditampilkan dengan warna teks
+        merah.</span>
+    <p>Ini merupakan sebuah teks yang berada pada elemen paragraf, teks ini tidak seharusnya tidak akan terpengaruh oleh
+        rule.</p>
+    <span>Ini merupakan sebuah teks yang berada pada elemen span lainnya. Seharusnya elemen ini ditampilkan dengan warna
+        teks merah juga.</span>
+    <!-- end type selector -->
+    <!-- class selector -->
+    <p class="red">Paragraf dengan teks berwarna merah</p>
+    <p class="skyblue-bg">Paragraf dengan background berwarna biru langit</p>
+    <p class="fancy">Paragraf dengan gaya fancy</p>
+    <p>Paragraf yang menampilkan teks dengan warna standar tanpa menerapkan styling</p>
+    <h1 class="red">Heading dengan teks berwarna merah</h1>
+    <p class="red">Paragraf dengan teks berwarna merah</p>
+    <h1 class="red skyblue-bg">Heading dengan teks berwarna merah dan background biru langit</h1>
+    <p class="red fancy">Paragraf dengan teks berwarna merah dan bergaya fancy</p>
+    <h1 class="fancy">Heading dengan teks bergaya fancy</h1>
+    <p class="fancy">Paragraf dengan teks bergaya fancy</p>
+    <!-- end class selector -->
+    <!-- id selector -->
+    <div id="special">
+        <p>Ini merupakan konten di dalam sebuah div yang diberi id special.</p>
+    </div>
+    <div>
+        <p>Ini merupakan konten di dalam sebuah div biasa.</p>
+    </div>
+    <div id="special"> <!-- ini merupakan contoh yang salah dalam penerapan id -->
+        <p>Ini merupakan konten di dalam sebuah div biasa.</p>
+    </div>
+    <!-- terdapat dua elemen memakai id yang sama -->
+    <!-- end id selector -->
+    <!-- attribute selector -->
+    <ul>
+        <ul>
+            <li><a href="#internal">Internal link</a></li>
+            <li><a href="http://example.com">Example link</a></li>
+            <li><a href="#InSensitive">Insensitive internal link</a></li>
+            <li><a href="http://example.org">Example org link</a></li>
+        </ul>
+    </ul>
+    <!-- attribute selector -->
+    <!-- universal selector -->
+    <p>
+        Ini merupakan paragraf biasa atau tidak menerapkan atribut apapun. Maka teks pada paragraf ini akan berwarna
+        hijau
+    </p>
+    <p lang="en-us">
+        This is an English paragraph contains en-us value of lang attribute, so this text will be green and
+        italic.
+    </p>
+
+    <h1>Ini merupakan sebuah header biasa</h1>
+    <h1 lang="en-us">This is an English Header</h1>
+
+    <p class="warning">
+        Perhatikan paragraf ini! Paragraf ini merupakan paragraf yang memiliki kelas bernilai warning,
+        sehingga teks dari paragraf ini akan berwarna merah
+    </p>
+
+    <div id="content">
+        <p>
+            Ini merupakan sebuah teks di dalam sebuah div yang memiliki id bernilai "content", seharusnya paragraf ini
+            dibungkus dalam border yang memiliki padding 20px
+        </p>
+    </div>
+    <!-- end universal selector -->
+    <!-- adjacent sibling selector -->
+    <p>Ini merupakan paragraf pertama. Rule styling tidak akan diterapkan pada elemen paragraf ini.</p>
+    <img src="https://i.imgur.com/cs2BJzw.jpg" alt="Dicoding logo" width="400px">
+    <p>Ini merupakan paragraf kedua dan ditetapkan setelah elemen gambar. Maka paragraf ini seharusnya menerapkan rule
+        dengan menampilkan teks berwarna hijau.</p>
+    <p>Ini merupakan paragraf ketiga. Letaknya memang setelah elemen gambar, namun tidak diletakkan persis setelahnya,
+        sehingga rule tidak akan diterapkan pada elemen ini.</p>
+    <!-- end adjacent sibling selector -->
+    <!-- general sibling selector -->
+    <p>Ini merupakan paragraf pertama. Rule styling tidak akan diterapkan pada elemen paragraf ini.</p>
+    <img src="https://i.imgur.com/cs2BJzw.jpg" alt="Dicoding logo" width="400px">
+    <p>Ini merupakan paragraf kedua dan ditetapkan setelah elemen gambar. Maka paragraf ini menerapkan rule dengan
+        menampilkan teks berwarna hijau.</p>
+    <div>
+        <p>Ini merupakan paragraf ketiga, letaknya setelah elemen gambar, namun paragraf ini dibungkus di dalam div
+            sehingga paragraf ini tidak akan menerapkan rule styling karena tidak memiliki induk yang sama.</p>
+    </div>
+    <p>Ini merupakan paragraf empat. Letaknya memang setelah elemen gambar dan memiliki induk yang sama seperti elemen
+        gambar, sehingga elemen ini akan menerapkan rule dengan menampilkan teks berwarna hijau.</p>
+    <!-- end general sibling selector -->
+    <!-- child selector -->
+    <div>
+        <p>Paragraf pertama. di dalam div.</p>
+        <p>Paragraf kedua. di dalam div.</p>
+        <section>
+            <p>Paragraf ketiga. di dalam div namun bukan sebagai anak elemen secara langsung.</p>
+        </section>
+        <p>Paragraf keempat. di dalam div.</p>
+    </div>
+    <p>Paragraf kelima. di luar div.</p>
+    <p>Paragraf keenam. di luar div.</p>
+    <!-- end child selector -->
+    <!-- desecendant selector (space) -->
+    <div>
+        <p>Paragraf pertama. di dalam div.</p>
+        <p>Paragraf kedua. di dalam div.</p>
+        <section>
+            <p id="first">Paragraf ketiga. di dalam div walaupun bukan sebagai anak elemen secara langsung, namun termasuk dalam
+                turunannya.</p>
+        </section>
+        <p id="second">Paragraf keempat. di dalam div.</p>
+    </div>
+    <p id="third">Paragraf kelima. di luar div.</p>
+    <p id="fourth">Paragraf keenam. di luar div.</p>
+    <!-- end descendant selector (space) -->
+    <!-- /* pseudo selector */ -->
+    <a href="#">Hello</a>
+    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius error explicabo ipsum molestiae
+        necessitatibus nesciunt possimus reprehenderit sed voluptates. Aliquam aspernatur autem est nobis officia
+        praesentium quas recusandae rem.</blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deserunt, dicta laudantium quae quam sequi
+            soluta vitae! A, architecto beatae, consequuntur et eveniet fuga laudantium molestias praesentium temporibus, unde
+            velit.</p>
+    <!-- end pseudo selector -->
+    <!-- box -->
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus officiis perspiciatis quidem ratione? Distinctio eos ex expedita iusto necessitatibus velit, veritatis. Aliquid, debitis dignissimos in iusto magnam nulla sed tempora.</p>
+      </div>
+    <!-- end box -->
+    <!-- limiting dimension -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eius explicabo fuga iusto magni minus odit praesentium, quasi quisquam quos repellat suscipit tempora tenetur? Assumenda cum laborum officiis quos ratione.</p>
+     </div>
+     <!-- limiting dimension end -->
+     <!-- /* Overflowing Content */ -->
+     <div id="test">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium amet corporis cupiditate dignissimos error expedita explicabo facere facilis, ipsam itaque libero modi officiis optio perspiciatis provident quam sequi voluptatem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut corporis facere harum inventore iure, quisquam recusandae reprehenderit veritatis voluptatum. Ducimus exercitationem illo nam sapiente suscipit, tenetur ullam ut voluptas!</p>
+      </div>
+     <!-- /* Overflowing Content */ -->
+     <!-- box sizing -->
+     <div id="content"></div>
+     <p>Elemen menerapkan <code>box-sizing: content-box;</code> Ukuran box secara keseluruhan akan menjadi 260px lebar, 260px tinggi; 260 = 200 + 20 + 20 + 10 + 10</p>
+     <br>
+     <div class="box"></div>
+     <p>Elemen menerapkan <code>box-sizing: border-box;</code> Ukuran box akan tetap 200px lebar, 200px tinggi meskipun menerapkan padding dan border</p>
+     <div class="box center">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ea, id. Aliquid consectetur dolorum
+            exercitationem ipsam, necessitatibus nostrum pariatur sunt! Accusantium architecto at dolorem itaque quisquam
+            quod soluta sunt voluptatum.</p>
+     </div>
+    </body>
+   <!-- box sizing end -->
+<!-- posisitioning -->
+<div class="boxes first">
+
+</div>
+<div class="boxes second">
+
+</div>
+<div class="boxes third">
+
+</div>
+<!-- posisitioning end-->
+<!--  flow -->
+<div class="parent">
+    <h1 class="normal-f fixed">Lorem ipsum dolor sit amet.</h1>
+<p class="normal-f">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium iusto non optio vel voluptas? Assumenda
+   blanditiis consequatur doloribus porro quasi similique vero voluptatibus. Adipisci, tenetur.</p>
+<p class="normal-f relative">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus commodi consectetur dolore eligendi, esse fuga
+   hic laboriosam nobis nostrum, nulla omnis optio pariatur repellendus reprehenderit saepe, sit soluta vel vero!</p>
+<p class="normal-f">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut corporis deleniti doloremque et excepturi
+   expedita labore libero, placeat, quaerat rerum ullam vitae voluptate. Accusantium et explicabo qui tenetur unde.
+   Amet aperiam doloremque enim, expedita id illo minima porro quod.</p>
+</div>
+<!-- flow end -->
+<!-- floating -->
+<div class="containerr">
+    <img src="https://i.imgur.com/cs2BJzw.jpg" width="200px" alt="dicoding" />
+    <c>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores commodi corporis
+      doloribus eum ipsum obcaecati pariatur quam quo, voluptatum? A, assumenda atque delectus
+      dolore nam natus neque quisquam repudiandae?
+    </c><br><br>
+    <c>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deserunt illum inventore
+      numquam officia recusandae, sit! Ab asperiores delectus dolor, eius est explicabo impedit
+      ipsa ipsum itaque mollitia neque nihil nisi officia praesentium sint! Accusantium libero
+      obcaecati provident qui? Error!
+    </c> <br><br>
+    <c>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis dolorem eaque eius
+      eos error eum ex facilis fuga ipsa iste iusto mollitia nam natus necessitatibus praesentium
+      quam qui quod, rerum sed sequi sint voluptates? Atque enim, ex facere fugiat ipsum mollitia
+      quos sunt. At, autem commodi dolorum eos, est expedita, incidunt molestias nobis nostrum
+      officia porro reiciendis saepe voluptatum.
+    </c>
+  </div>
+
+  <div class="containerrr">
+    <div class="left-content">
+      <h3>Left Content</h3>
+    </div>
+    <div class="right-content">
+      <h3>Right Content</h3>
+    </div>
+  </div>
+  <!-- 3 kotak -->
+  <div class="containerrrr">
+    <div class="left-contentt">
+      <h3>Left Content</h3>
+    </div>
+    <div class="center-contentt">
+      <h3>Center Content</h3>
+    </div>
+    <div class="right-contentt">
+      <h3>Right Content</h3>
+    </div>
+
+    <!-- float problem -->
+    <div class="kontener">
+        <img src="https://i.imgur.com/cs2BJzw.jpg" width="200px" alt="dicoding">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci architecto aspernatur dolorem
+       doloremque eum excepturi fuga hic, molestias obcaecati officia perferendis perspiciatis qui saepe ut velit
+       veniam vitae voluptatum.</p>
+       <!-- fixing code -->
+       <div style="clear: left;"></div>
+     </div>
+  </div>
+  <!-- floating end -->
+
+</body>
+
+</html>

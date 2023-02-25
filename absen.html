@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daftar Hadir</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+        body {
+	background-color: #000;
+	color: #fff;
+}
+
+.daftar-hadir {
+	margin-top: 50px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+button {
+	margin: 0 10px;
+}
+
+button:focus {
+	box-shadow: none;
+}
+
+button:active {
+	transform: translateY(2px);
+	box-shadow: none;
+}
+
+    </style>
+</head>
+<body>
+
+	<div class="container">
+		<h1 class="text-center">Daftar Hadir</h1>
+		<div class="row">
+			<div class="col-sm-12 col-md-6 offset-md-3">
+				<div class="daftar-hadir">
+					<ol id="daftar"></ol>
+				</div>
+				<div class="buttons">
+					<button id="absenBtn" class="btn btn-primary">Absen</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+document.getElementById("absenBtn").addEventListener("click", function() {
+	const nama = prompt("Masukkan Nama Anda:");
+	if (nama !== null && nama !== "") {
+		const daftar = document.getElementById("daftar");
+		const listItem = document.createElement("li");
+		listItem.textContent = nama;
+		daftar.appendChild(listItem);
+	}
+});
+
+    </script>
+</body>
+</html>

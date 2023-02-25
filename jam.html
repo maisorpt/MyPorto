@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		body {
+	background-color: #000;
+	color: #fff;
+}
+
+.clock {
+	font-size: 80px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+button {
+	margin: 0 10px;
+}
+
+button:focus {
+	box-shadow: none;
+}
+
+button:active {
+	transform: translateY(2px);
+	box-shadow: none;
+}
+
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-6 offset-md-3">
+			<div class="clock">
+				<span id="hours">00</span> :
+				<span id="minutes">00</span> :
+				<span id="seconds">00</span>
+			</div>
+			<div class="buttons">
+				<button id="startBtn" class="btn btn-primary">Start</button>
+				<button id="stopBtn" class="btn btn-danger">Stop</button>
+				<button id="resetBtn" class="btn btn-secondary">Reset</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	let timerId;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+
+function startClock() {
+	const now = new Date();
+	hours = now.getHours();
+	minutes = now.getMinutes();
+	seconds = now.getSeconds();
+	timerId = setInterval(updateClock, 1000);
+}
+
+function stopClock() {
+	clearInterval(timerId);
+}
+
+function resetClock() {
+	hours = 0;
+	minutes = 0;
+	seconds = 0;
+	updateClock();
+}
+
+function updateClock() {
+	seconds += 1;
+	if (seconds >= 60) {
+		minutes += 1;
+		seconds = 0;
+	}
+	if (minutes >= 60) {
+		hours += 1;
+		minutes = 0;
+	}
+	if (hours >= 24) {
+		hours = 0;
+	}
+	document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+	document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+	document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+}
+
+document.getElementById("startBtn").addEventListener("click", startClock);
+document.getElementById("stopBtn").addEventListener("click", stopClock);
+document.getElementById("resetBtn").addEventListener("click", resetClock);
+
+updateClock();
+
+</script>
+</body>
+</html>

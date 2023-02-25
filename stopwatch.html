@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stopwatch</title>
+	<style>
+		.stopwatch {
+			font-size: 50px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="stopwatch">
+		00:00:00<span class="milisecond">.000</span>
+	</div>
+	<div>
+		<button onclick="start()">Start</button>
+		<button onclick="stop()">Stop</button>
+		<button onclick="reset()">Reset</button>
+	</div>
+
+	<script>
+		let hours = 0;
+		let minutes = 0;
+		let seconds = 0;
+		let miliseconds = 0;
+		let stopwatch;
+
+		function displayStopwatch() {
+			miliseconds++;
+			if (miliseconds == 60) {
+				miliseconds = 0;
+				seconds++;
+			}
+			if (seconds == 60) {
+				seconds = 0;
+				minutes++;
+			}
+			if (minutes == 60) {
+				minutes = 0;
+				hours++;
+			}
+			let time = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + 
+			           (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + 
+			           (seconds > 9 ? seconds : "0" + seconds) + "." + 
+			           (miliseconds > 99 ? miliseconds : (miliseconds > 9 ? "0" + miliseconds : "00" + miliseconds));
+			document.querySelector(".stopwatch").innerHTML = time;
+		}
+
+		function start() {
+			stopwatch = setInterval(displayStopwatch, 1);
+		}
+
+		function stop() {
+			clearInterval(stopwatch);
+		}
+
+		function reset() {
+			clearInterval(stopwatch);
+			hours = 0;
+			minutes = 0;
+			seconds = 0;
+			miliseconds = 0;
+			document.querySelector(".stopwatch").innerHTML = "00:00:00<span class='milisecond'>.000</span>";
+		}
+	</script>
+</body>
+</html>

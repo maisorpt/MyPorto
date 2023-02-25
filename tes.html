@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 0;
+}
+
+nav ul ul li {
+  display: block;
+  width: 200px;
+}
+
+nav ul ul li a {
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul ul li:hover {
+  background-color: #f0f0f0;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+  <ul>
+    <li><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a>
+      <ul>
+        <li><a href="#">Submenu 1</a></li>
+        <li><a href="#">Submenu 2</a></li>
+        <li><a href="#">Submenu 3</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Menu 3</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
